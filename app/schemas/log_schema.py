@@ -2,8 +2,8 @@ from pydantic import BaseModel
 from datetime import datetime
 
 class LogEntryBase(BaseModel):
-    sap_system_id: str = "S4H"
-    app_server_instance: str = "vhcals4hci_S4H_00"
+    sap_system_id: str
+    app_server_instance: str
     message_identifier: str
     syslog_msg_group: str
     sub_name: str
@@ -24,7 +24,7 @@ class LogEntryBase(BaseModel):
     second_variable_value: str
     third_variable_value: str
     audit_log_msg_text: str
-    long_version_of_event: str
+    # long_version_of_event: str
     audit_class: str
     message_severity: str
     criticality: str

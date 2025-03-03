@@ -2,15 +2,12 @@
 from sqlalchemy import Column, String, Integer, DateTime
 from app.models.database import Base
 from sqlalchemy.sql import func
-
-
-
 class LogEntry(Base):
     __tablename__ = "log_entries"
 
     id = Column(Integer, primary_key=True, index=True)
-    sap_system_id = Column(String, index=True, default="S4H")
-    app_server_instance = Column(String, default="vhcals4hci_S4H_00")
+    sap_system_id = Column(String, index=True)
+    app_server_instance = Column(String)
     message_identifier = Column(String)
     syslog_msg_group = Column(String,nullable=True)
     sub_name = Column(String,nullable=True)
@@ -31,7 +28,7 @@ class LogEntry(Base):
     second_variable_value = Column(String,nullable=True)
     third_variable_value = Column(String,nullable=True)
     audit_log_msg_text = Column(String,nullable=True)
-    long_version_of_event = Column(String,nullable=True)
+    # long_version_of_event = Column(String,nullable=True)
     audit_class = Column(String,nullable=True)
     message_severity = Column(String,nullable=True)
     criticality =Column(String,nullable=True)
